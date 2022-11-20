@@ -1,1 +1,10 @@
 GET http://localhost:3000/csm
+
+###
+POST http://localhost:3000/csm
+Content-Type: application/json
+
+{
+    "name": "Cirdei",
+    "prenume": "Vasile-Petrisor"
+}
