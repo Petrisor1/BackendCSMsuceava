@@ -1,10 +1,16 @@
-GET http://localhost:3000/csm
+GET http://localhost:3000/
 
 ###
-POST http://localhost:3000/csm
+POST http://localhost:3000/add
 Content-Type: application/json
 
 {
-    "name": "Abobului",
-    "prenume": "Ioan"
+    "echipa": "FortaCLUJ",
+    "meciuri": 5,
+    "victorii":6,
+    "infrangeri":7,
+    "seturi":"8",
+    "puncte":9,
 }
+###
+DELETE http://localhost:3000/delete/28
