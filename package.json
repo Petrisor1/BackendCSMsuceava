@@ -1,21 +1,30 @@
 {
   "name": "backendnodecsm",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
-   
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^6.7.2"
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7",
+    "sequelize": "^6.25.8"
   },
   "devDependencies": {
     "dotnet": "^1.1.4",
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Petrisor1/BackendCSMsuceava.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Petrisor1/BackendCSMsuceava/issues"
+  },
+  "homepage": "https://github.com/Petrisor1/BackendCSMsuceava#readme",
+  "description": ""
 }

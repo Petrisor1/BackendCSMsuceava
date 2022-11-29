@@ -1,2 +1,2 @@
-username: csmuser
+username: root
 password: parolaPuternica
