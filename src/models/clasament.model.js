@@ -1,7 +1,8 @@
-const Sequelize =require('sequelize');
-const sequelize = require("../database/connection");
+const { DataTypes } = require("sequelize");
 
-module.exports= sequelize.define('Clasament',
+module.exports=(sequelize,Sequelize) =>
+{
+const Clasament= sequelize.define("clasament",
     {
         id:{
             type:Sequelize.INTEGER(11),
@@ -45,4 +46,9 @@ module.exports= sequelize.define('Clasament',
             allowNull:false,
            
         }
+        
     });
+    return Clasament;
+};
+     
+        

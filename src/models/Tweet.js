@@ -1,17 +1,17 @@
-const Sequelize =require('sequelize');
+// const Sequelize =require('sequelize');
 
 
-module.exports = sequelize.define("Tweet",{
-    id:{
-        type:Sequelize.INTEGER(11),
-        allowNull:false,
-        autoIncrement:true,
-        primaryKey:true,
+// module.exports = sequelize.define("Tweet",{
+//     id:{
+//         type:Sequelize.INTEGER(11),
+//         allowNull:false,
+//         autoIncrement:true,
+//         primaryKey:true,
         
-   },
-    content:{
-        type:Sequelize.STRING(100),
-        allowNull:false,
-        unique: true,
-    }
-})
+//    },
+//     content:{
+//         type:Sequelize.STRING(100),
+//         allowNull:false,
+//         unique: true,
+//     }
+// })
