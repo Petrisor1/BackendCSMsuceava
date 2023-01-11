@@ -1,22 +1,22 @@
-GET http://localhost:3000/
+GET http://localhost:3000/clasament
 
 ###
-POST http://localhost:3000/
+POST http://localhost:3000/clasament
 Content-Type: application/json
 
 {
-    "echipa": "FortaCLUJ",
-    "meciuri": 5,
+    "echipa": "FortaCFr",
+    "meciuri": 6,
     "victorii":6,
-    "infrangeri":7,
-    "seturi":"8",
-    "puncte":9
+    "infrangeri":0,
+    "seturi":"10",
+    "puncte":100
 }
 ###
 DELETE http://localhost:3000/delete/28
 
 ###
-PUT http://localhost:3000/update-clasament/1
+PUT http://localhost:3000/clasament:1
 Content-Type: application/json
 
 {  "echipa": "Steaua Bucuresti",
@@ -26,3 +26,6 @@ Content-Type: application/json
     "seturi":"8-2",
     "puncte":1
 }
+###
+GET http://localhost:3000/clasament:?Dinamo
+Content-Type: application/json

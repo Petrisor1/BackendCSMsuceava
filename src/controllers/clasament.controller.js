@@ -34,8 +34,7 @@ exports.findAll=(req,res) =>
     Clasament.findAll().then(clasaments =>res.send(clasaments)).catch(err=>res.status(500).send({
         message:"Eroare la obtinerea clasamentelor"
     }))
-
-
+    
 }
 
 exports.findOne=(res,req)=>

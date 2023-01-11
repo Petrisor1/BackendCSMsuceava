@@ -20,7 +20,7 @@ module.exports = app=>
     //Gasirea unui singur clasament in functie de numele acestuia
     router.get("/:echipa",clasaments.findOne);
 
-    app.use("/",router);
+    app.use("/clasament",router);
  //////////////////////////  OLD ///////////////////////////////
  //Get route SELECT * from clasament
 //     router.get('/',(req,res)=>
