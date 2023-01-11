@@ -1,5 +1,5 @@
 const db= require("../models");
-const Sponsor=db.sponsors;
+const Sponsor = db.sponsors;
 const Op=db.Sequelize.Op;
 
 exports.create=(req,res)=>
@@ -13,8 +13,9 @@ exports.create=(req,res)=>
     {
         nume:req.body.nume,
     }
-    Sponsor.create(sponsor).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea sponsorului"}))
-}
+    Sponsor.create(sponsor)
+    .then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea sponsorului"}))
+};
 
 exports.findAll=(res,req)=>
 {

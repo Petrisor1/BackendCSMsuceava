@@ -9,16 +9,19 @@ exports.create=(req,res)=>
         res.status(400).send({message:"Continutul trimis este gol"});
     }
 
-    const sponsor=
+    const jucator=
     {
         nume:req.body.nume,
+        prenume:req.body.prenume,
+        pozitie:req.body.pozitie,
+        salariu:req.body.salariu
     }
-    Sponsor.create(sponsor).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea jucatorului"}))
+    Jucator.create(jucator).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea jucatorului"}))
 }
 
 exports.findAll=(res,req)=>
 {
-    Sponsor.findAll().then(sponsors=>res.send(sponsors)).catch(err=>res.status(500).send({
+    Jucator.findAll().then(jucatori=>res.send(jucatori)).catch(err=>res.status(500).send({
         message:"Eroare la obtinerea jucatorilor"
     }))
 }
@@ -27,7 +30,7 @@ exports.update=(res,req)=>
 {
     const id=req.params.id;
 
-    Sponsor.update(req.body,{where:{id:id}}).then(num =>
+    Jucator.update(req.body,{where:{id:id}}).then(num =>
         {
             if(num==1)
             {
@@ -51,7 +54,7 @@ exports.update=(res,req)=>
 exports.delete=(res,req)=>
 {
     const id=req.params.id;
-    Sponsor.destroy({
+    Jucator.destroy({
         where:{id:id}
     }).then(num=>
         {
