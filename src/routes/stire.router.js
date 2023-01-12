@@ -1,4 +1,4 @@
-modeule.exports =app=>
+module.exports = app=>
 {
     const stiri=require("../controllers/stiri.controller.js");
     var router=require("express").Router();
