@@ -1,4 +1,4 @@
-module.express = app=>
+module.exports = app=>
 {
     const sponsors=require("../controllers/sponsor.controller.js");
     var router=require("express").Router();

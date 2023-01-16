@@ -19,12 +19,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 //require('./src/models/index.js');
 require("./src/routes/clasament.routes")(app);
-//require("./src/routes/sponsor.router")(app);
-// require("./src/routes/administrator.routes")(app);
-// require("./src/routes/istorie.routes")(app);
-// require("./src/routes/media.routes")(app);
-// require("./src/routes/stire.router")(app);
-// require("./src/routes/jucator.router")(app);
+require("./src/routes/sponsor.routes")(app);
+require("./src/routes/administrator.routes")(app);
+require("./src/routes/istorie.routes")(app);
+require("./src/routes/media.routes")(app);
+require("./src/routes/stire.routes")(app);
+require("./src/routes/jucator.routes")(app);
 // router.use((err,req,res,next)=>
 // {
 //     if(err)

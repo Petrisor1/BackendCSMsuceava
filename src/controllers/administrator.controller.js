@@ -9,16 +9,16 @@ exports.create=(req,res)=>
         res.status(400).send({message:"Continutul trimis este gol"});
     }
 
-    const sponsor=
+    const administrator=
     {
         nume:req.body.nume,
     }
-    Sponsor.create(sponsor).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea noului administrator"}))
+    Administrator.create(administrator).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea noului administrator"}))
 }
 
-exports.findAll=(res,req)=>
+exports.findAll=(req,res)=>
 {
-    Sponsor.findAll().then(sponsors=>res.send(sponsors)).catch(err=>res.status(500).send({
+    Administrator.findAll().then(administrators=>res.send(administrators)).catch(err=>res.status(500).send({
         message:"Eroare la obtinerea administratorilor"
     }))
 }
@@ -27,7 +27,7 @@ exports.update=(res,req)=>
 {
     const id=req.params.id;
 
-    Sponsor.update(req.body,{where:{id:id}}).then(num =>
+    Administrator.update(req.body,{where:{id:id}}).then(num =>
         {
             if(num==1)
             {
@@ -48,10 +48,10 @@ exports.update=(res,req)=>
         }));
 }
 
-exports.delete=(res,req)=>
+exports.delete=(req,res)=>
 {
     const id=req.params.id;
-    Sponsor.destroy({
+    Administrator.destroy({
         where:{id:id}
     }).then(num=>
         {

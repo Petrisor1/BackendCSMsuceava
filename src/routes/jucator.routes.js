@@ -13,8 +13,8 @@ module.exports =app =>
     //Update-ul unui clasament in functie de id
     router.put("/:id",jucatori.update);
 
-    //Gasirea unui singur clasament in functie de numele acestuia
-    router.get("/:echipa",jucatori.findOne);
+    //Gasirea unui singur  in functie de numele acestuia
+  //  router.get("/:echipa",jucatori.findOne);
 
     app.use("/jucator",router);
 }

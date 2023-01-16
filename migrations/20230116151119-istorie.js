@@ -3,44 +3,31 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    return queryInterface.createTable("jucatori",
+    return queryInterface.createTable('istories',
     {
       id:{
         type:Sequelize.INTEGER(11),
         allowNull:false,
         autoIncrement:true,
         primaryKey:true,
-        
    },
-    nume:{
+    titlu:{
         type:Sequelize.STRING(100),
         allowNull:false,
         unique: true,
     },
-    prenume:
+    descriere:
     {
-        type:Sequelize.INTEGER(11),
+        type:Sequelize.STRING(250),
         allowNull:false,
-        
-    },
-    pozitie:
-    {
-        type:Sequelize.STRING(100),
-        allowNull:false,
-        
-    },
-    salariu:
-    {
-        type:Sequelize.DECIMAL(12),
-        allowNull:false,
-       
     },
     createdAt:Sequelize.DATE,
     updatedAt:Sequelize.DATE
+
     })
   },
 
   async down (queryInterface, Sequelize) {
-    return queryInterface.dropTable("jucatori");
+   queryInterface.dropTable('istories');
   }
 };

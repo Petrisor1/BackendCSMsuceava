@@ -1,3 +1,4 @@
+const { DataTypes } = require("sequelize");
 module.exports=(sequelize,Sequelize) =>
 {
     const Media=sequelize.define("media",
@@ -20,4 +21,4 @@ module.exports=(sequelize,Sequelize) =>
 
     })
     return Media;
-}
+};

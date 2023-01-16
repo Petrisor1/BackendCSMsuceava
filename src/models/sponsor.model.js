@@ -2,7 +2,7 @@
 
 module.exports=(sequelize,Sequelize) =>
 {
-    const Sponsor =sequelize.define("sponsor",
+    const Sponsor =sequelize.define("sponsors",
     {
         id:
         {
@@ -20,4 +20,4 @@ module.exports=(sequelize,Sequelize) =>
     }
 );
     return Sponsor;
-}
+};

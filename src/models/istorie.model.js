@@ -1,6 +1,7 @@
-require.models =(sequelize,Sequelize)=>
+const { DataTypes } = require("sequelize");
+module.exports =(sequelize,Sequelize)=>
 {
-    const  Istorie=sequelize.define("instorie",{
+    const  Istorie=sequelize.define("istorie",{
         id:{
             type:Sequelize.INTEGER(11),
             allowNull:false,
@@ -19,4 +20,4 @@ require.models =(sequelize,Sequelize)=>
         },
     })
     return Istorie;
-}
+};

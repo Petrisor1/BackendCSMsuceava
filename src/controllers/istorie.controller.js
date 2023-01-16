@@ -9,25 +9,26 @@ exports.create=(req,res)=>
         res.status(400).send({message:"Continutul trimis este gol"});
     }
 
-    const sponsor=
+    const istorie=
     {
-        nume:req.body.nume,
+        titlu:req.body.nume,
+        descriere:req.body.descriere
     }
-    Sponsor.create(sponsor).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea istoriei"}))
+    Istorie.create(istorie).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea istoriei"}))
 }
 
-exports.findAll=(res,req)=>
+exports.findAll=(req,res)=>
 {
-    Sponsor.findAll().then(sponsors=>res.send(sponsors)).catch(err=>res.status(500).send({
+    Istorie.findAll().then(sponsors=>res.send(sponsors)).catch(err=>res.status(500).send({
         message:"Eroare la obtinerea istoriei"
     }))
 }
 
-exports.update=(res,req)=>
+exports.update=(req,res)=>
 {
     const id=req.params.id;
 
-    Sponsor.update(req.body,{where:{id:id}}).then(num =>
+    Istorie.update(req.body,{where:{id:id}}).then(num =>
         {
             if(num==1)
             {
@@ -51,7 +52,7 @@ exports.update=(res,req)=>
 exports.delete=(res,req)=>
 {
     const id=req.params.id;
-    Sponsor.destroy({
+    Istorie.destroy({
         where:{id:id}
     }).then(num=>
         {

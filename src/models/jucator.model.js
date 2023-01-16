@@ -1,3 +1,4 @@
+const { DataTypes } = require("sequelize");
 module.exports=(sequelize,Sequelize) =>
 {
 const Jucator= sequelize.define("jucator",
@@ -33,5 +34,5 @@ const Jucator= sequelize.define("jucator",
            
         }
     });
-    return Clasament;
+    return Jucator;
 };

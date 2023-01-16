@@ -1,19 +1,19 @@
 module.exports =app => {
 
-    const administratos=require("../controllers/administrator.controller.js");
+    const administrators=require("../controllers/administrator.controller.js");
     var router=require("express").Router();
 
     //GET all administrators
-    router.get("/",administratos.findAll);
+    router.get("/",administrators.findAll);
 
     //Adaugarea unui administrator
-    router.post("/",administratos.create);
+    router.post("/",administrators.create);
 
     //Stergerea unui administrator
-    router.delete("/",administratos.delete);
+    router.delete("/",administrators.delete);
 
     //Update aministrator
-    router.put("/",administratos.update);
+    router.put("/",administrators.update);
 
     app.use("/administrator",router);
 }

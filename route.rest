@@ -44,7 +44,19 @@ POST http://localhost:3000/sponsor
 Content-Type: application/json
 
 {
-    "nume":"SRLMercedesBenz"
+    "nume":"ElMagnifico"
 }
 ###
-GET http://localhost:3000/stiri
+GET http://localhost:3000/sponsor
+###
+GET http://localhost:3000/administrator
+
+###
+GET http://localhost:3000/jucator
+###
+POST http://localhost:3000/stiri
+Content-Type: application/json
+
+{
+    "nume":"ElMagnifico"
+}

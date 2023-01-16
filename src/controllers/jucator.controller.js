@@ -19,14 +19,14 @@ exports.create=(req,res)=>
     Jucator.create(jucator).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea jucatorului"}))
 }
 
-exports.findAll=(res,req)=>
+exports.findAll=(req,res)=>
 {
     Jucator.findAll().then(jucatori=>res.send(jucatori)).catch(err=>res.status(500).send({
         message:"Eroare la obtinerea jucatorilor"
     }))
 }
 
-exports.update=(res,req)=>
+exports.update=(req,res)=>
 {
     const id=req.params.id;
 

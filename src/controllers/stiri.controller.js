@@ -9,16 +9,17 @@ exports.create=(req,res)=>
         res.status(400).send({message:"Continutul trimis este gol"});
     }
 
-    const sponsor=
+    const stire=
     {
-        nume:req.body.nume,
+        titlu:req.body.titlu,
+        descriere:req.body.descriere
     }
-    Sponsor.create(sponsor).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea unei stiri"}))
+    Stire.create(stire).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea unei stiri"}))
 }
 
-exports.findAll=(res,req)=>
+exports.findAll=(req,res)=>
 {
-    Sponsor.findAll().then(sponsors=>res.send(sponsors)).catch(err=>res.status(500).send({
+    Stire.findAll().then(stiri=>res.send(stiri)).catch(err=>res.status(500).send({
         message:"Eroare la obtinerea stirilor"
     }))
 }
@@ -27,7 +28,7 @@ exports.update=(res,req)=>
 {
     const id=req.params.id;
 
-    Sponsor.update(req.body,{where:{id:id}}).then(num =>
+    Stire.update(req.body,{where:{id:id}}).then(num =>
         {
             if(num==1)
             {
@@ -51,7 +52,7 @@ exports.update=(res,req)=>
 exports.delete=(res,req)=>
 {
     const id=req.params.id;
-    Sponsor.destroy({
+    Stire.destroy({
         where:{id:id}
     }).then(num=>
         {

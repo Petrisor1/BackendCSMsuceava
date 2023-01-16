@@ -1,5 +1,5 @@
 const db= require("../models");
-const Jucator=db.jucatori;
+const Media=db.media;
 const Op=db.Sequelize.Op;
 
 exports.create=(req,res)=>
@@ -9,25 +9,26 @@ exports.create=(req,res)=>
         res.status(400).send({message:"Continutul trimis este gol"});
     }
 
-    const sponsor=
+    const media=
     {
         nume:req.body.nume,
+        data:req.body.data
     }
-    Sponsor.create(sponsor).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la adaugarea fotografiei"}))
+    Media.create(media).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la adaugarea fotografiei"}))
 }
 
-exports.findAll=(res,req)=>
+exports.findAll=(req,res)=>
 {
-    Sponsor.findAll().then(sponsors=>res.send(sponsors)).catch(err=>res.status(500).send({
+    Media.findAll().then(sponsors=>res.send(sponsors)).catch(err=>res.status(500).send({
         message:"Eroare la obtinerea continutului media"
     }))
 }
 
-exports.update=(res,req)=>
+exports.update=(req,res)=>
 {
     const id=req.params.id;
 
-    Sponsor.update(req.body,{where:{id:id}}).then(num =>
+    Media.update(req.body,{where:{id:id}}).then(num =>
         {
             if(num==1)
             {

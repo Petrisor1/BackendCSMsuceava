@@ -1,6 +1,8 @@
+const { DataTypes } = require("sequelize");
+
 module.exports=(sequelize,Sequelize)=>
 {
-    const Administrator=sequelize.define("administrator",
+    const Administrator=sequelize.define("administrators",
     {
         id:
         {
@@ -29,4 +31,4 @@ module.exports=(sequelize,Sequelize)=>
         }
     })
     return Administrator;
-}
+};

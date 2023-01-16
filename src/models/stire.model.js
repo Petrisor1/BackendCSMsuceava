@@ -1,7 +1,7 @@
 
 module.exports = (sequelize,Sequelize)=>
 {
-    const Stire=sequelize.define("Stire",
+    const Stire=sequelize.define("stiri",
     {
         id:
         {
@@ -26,4 +26,4 @@ module.exports = (sequelize,Sequelize)=>
 
     });
     return Stire;
-}
+};

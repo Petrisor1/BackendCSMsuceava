@@ -17,7 +17,7 @@ exports.create=(req,res)=>
     .then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea sponsorului"}))
 };
 
-exports.findAll=(res,req)=>
+exports.findAll=(req,res)=>
 {
     Sponsor.findAll().then(sponsors=>res.send(sponsors)).catch(err=>res.status(500).send({
         message:"Eroare la obtinerea sponsorilor"
