@@ -1,5 +1,5 @@
 const db= require("../models");
-const Jucator=db.jucatori;
+const Jucator=db.jucators;
 const Op=db.Sequelize.Op;
 
 exports.create=(req,res)=>

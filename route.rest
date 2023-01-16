@@ -15,7 +15,8 @@ Content-Type: application/json
 ###
 DELETE http://localhost:3000/delete/28
 ###
-
+GET http://localhost:3000/jucator
+###
 POST http://localhost:3000/jucator
 Content-Type: application/json
 
@@ -47,12 +48,10 @@ Content-Type: application/json
     "nume":"ElMagnifico"
 }
 ###
-GET http://localhost:3000/sponsor
-###
 GET http://localhost:3000/administrator
 
 ###
-GET http://localhost:3000/jucator
+GET http://localhost:3000/
 ###
 POST http://localhost:3000/stiri
 Content-Type: application/json

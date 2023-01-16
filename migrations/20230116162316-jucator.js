@@ -18,7 +18,7 @@ module.exports = {
   },
   prenume:
   {
-      type:Sequelize.INTEGER(11),
+      type:Sequelize.STRING(100),
       allowNull:false,
       
   },
@@ -41,6 +41,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    return queryInterface.dropTable('jucatoris');
+    return queryInterface.dropTable('jucators');
   }
 };

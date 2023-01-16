@@ -17,7 +17,7 @@ const Jucator= sequelize.define("jucator",
         },
         prenume:
         {
-            type:Sequelize.INTEGER(11),
+            type:Sequelize.STRING(100),
             allowNull:false,
             
         },
