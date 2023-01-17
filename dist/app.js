@@ -27,6 +27,7 @@ require("./src/routes/istorie.routes")(app);
 require("./src/routes/media.routes")(app);
 require("./src/routes/stire.routes")(app);
 require("./src/routes/jucator.routes")(app);
+require("./src/routes/meci.routes")(app);
 // router.use((err,req,res,next)=>
 // {
 //     if(err)

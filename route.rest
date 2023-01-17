@@ -1,5 +1,7 @@
 GET http://localhost:3000/clasament
-
+###
+DELETE http://localhost:3000/clasament/id:7
+###
 ###
 POST http://localhost:3000/clasament
 Content-Type: application/json
@@ -51,11 +53,16 @@ Content-Type: application/json
 GET http://localhost:3000/administrator
 
 ###
-GET http://localhost:3000/
+GET http://localhost:3000/meci
+
 ###
-POST http://localhost:3000/stiri
+PUT http://localhost:3000/meci/1
 Content-Type: application/json
 
 {
-    "nume":"ElMagnifico"
+    "echipa_unu":"Mancester United",
+    "echipa_doi":"Liverpool",
+    "stare":"castigat",
+    "data":"2022-01-12"
+
 }
