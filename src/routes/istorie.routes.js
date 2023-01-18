@@ -7,9 +7,9 @@ module.exports= app=>
 
     router.post("/",istorie.create);
 
-    router.delete("/",istorie.delete);
+    router.delete("/:id",istorie.delete);
 
-    router.put("/",istorie.update);
+    router.put("/:id",istorie.update);
 
     app.use("/istorie",router);
 }

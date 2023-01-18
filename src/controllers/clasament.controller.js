@@ -45,12 +45,12 @@ exports.findOne=(res,req)=>
     );
 }
 
-exports.update=(res,req)=>
+exports.update=(req,res)=>
 {
     const id=req.params.id;
 
     Clasament.update(req.body,{where:{id:id}}).then(num =>
-        {
+        { 
             if(num==1)
             {
                 res.send({
@@ -65,12 +65,12 @@ exports.update=(res,req)=>
                     }
                 )
             }
-        }).catch(res.status(500).send({
+        }).catch(err=>res.status(500).send({
             message:`Eroare la updatate-ul clasamentului cu id-ul: ${id} `
         }));
 }
 
-exports.delete=(res,req)=>
+exports.delete=(req,res)=>
 {
     const id=req.params.id;
     Clasament.destroy({

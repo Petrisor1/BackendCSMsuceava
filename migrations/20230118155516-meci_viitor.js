@@ -3,8 +3,8 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-  return queryInterface.createTable('mecis',
-  {
+   return queryInterface.createTable("meciuri_viitors",
+   {
     id:
     {
         type:Sequelize.INTEGER(11),
@@ -22,25 +22,18 @@ module.exports = {
         type:Sequelize.STRING(255),
         allowNull:false
     },
-    scor:
-    {
-        type:Sequelize.String(20)
-    },
-    castigator:
-    {
-        type:Sequelize.STRING(255),
-
-    },
     data:
     {
         type:Sequelize.DATE()
     },
     createdAt:Sequelize.DATE,
     updatedAt:Sequelize.DATE
-  })
+
+   })
+
   },
 
   async down (queryInterface, Sequelize) {
-  return  queryInterface.dropTable("mecis");
+    return queryInterface.dropTable("mecirui_viitors");
   }
 };

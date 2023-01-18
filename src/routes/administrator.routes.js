@@ -10,10 +10,10 @@ module.exports =app => {
     router.post("/",administrators.create);
 
     //Stergerea unui administrator
-    router.delete("/",administrators.delete);
+    router.delete("/:id",administrators.delete);
 
     //Update aministrator
-    router.put("/",administrators.update);
+    router.put("/:id",administrators.update);
 
     app.use("/administrator",router);
 }

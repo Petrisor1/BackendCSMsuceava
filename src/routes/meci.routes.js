@@ -7,9 +7,9 @@ module.exports= app=>
 
     router.post("/",meci.create);
 
-    router.delete("/",meci.delete);
+    router.delete("/:id",meci.delete);
 
-    router.put("/",meci.update);
+    router.put("/:id",meci.update);
 
     app.use("/meci",router);
 }

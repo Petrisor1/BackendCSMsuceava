@@ -23,7 +23,7 @@ exports.findAll=(req,res)=>
     }))
 }
 
-exports.update=(res,req)=>
+exports.update=(req,res)=>
 {
     const id=req.params.id;
 
@@ -43,7 +43,7 @@ exports.update=(res,req)=>
                     }
                 )
             }
-        }).catch(res.status(500).send({
+        }).catch(err=>res.status(500).send({
             message:`Eroare la updatate-ul administratorului cu id-ul: ${id} `
         }));
 }

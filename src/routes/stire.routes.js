@@ -7,7 +7,7 @@ module.exports = app=>
 
     router.post("/",stiri.create);
 
-    router.delete("/",stiri.delete);
+    router.delete("/:id",stiri.delete);
 
     router.put("/:id",stiri.update);
 

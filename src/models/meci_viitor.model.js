@@ -2,7 +2,7 @@ const {DataTypes, Sequelize}=require("sequelize");
 module.exports =(sequelize,Sequelize) =>
 {
 
-    const Meci=sequelize.define("meci",
+    const Meci_viitor=sequelize.define("meciuri_viitor",
     {
         id:
         {
@@ -21,20 +21,11 @@ module.exports =(sequelize,Sequelize) =>
             type:Sequelize.STRING(255),
             allowNull:false
         },
-        scor:
-        {
-            type:Sequelize.STRING(20)
-        },
-        castigator:
-        {
-            type:Sequelize.STRING(255),
-
-        },
         data:
         {
             type:Sequelize.DATE()
         }
 
     })
-    return Meci
+    return Meci_viitor
 };

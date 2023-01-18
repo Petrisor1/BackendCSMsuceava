@@ -1,5 +1,5 @@
 const db= require("../models");
-const Meci=db.mecis;
+const Meci_viitor=db.meciuri_viitors;
 const Op=db.Sequelize.Op;
 
 exports.create=(req,res)=>
@@ -9,20 +9,18 @@ exports.create=(req,res)=>
         res.status(400).send({message:"Continutul trimis este gol"});
     }
 
-    const meci=
+    const meci_viitor=
     {
-       echipa_unu:req.body.echipa_unu,
-       echipa_doi:req.body.echipa_doi,
-       scor:req.body.scor,
-        castigator:req.body.castigator,
+        echipa_unu:req.body.echipa_unu,
+        echipa_doi:req.body.echipa_doi,
         data:req.body.data
     }
-    Meci.create(meci).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea jucatorului"}))
+    Meci_viitor.create(meci_viitor).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea meciului"}))
 }
 
 exports.findAll=(req,res)=>
 {
-    Meci.findAll().then(meciuri=>res.send(meciuri)).catch(err=>res.status(500).send({
+    Meci_viitor.findAll().then(meciuri=>res.send(meciuri)).catch(err=>res.status(500).send({
         message:"Eroare la obtinerea Meciurilor"
     }))
 }
@@ -31,13 +29,13 @@ exports.update=(req,res)=>
 {
     const id=req.params.id;
 
-    Meci.update(req.body,{where:{id:id}}).then(num =>
+    Meci_viitor.update(req.body,{where:{id:id}}).then(num =>
         {
             if(num==1)
             {
                 res.send({
                     message:"Informatia a fost updatata cu succes"
-                })
+                });
             }
             else{
 
@@ -45,18 +43,18 @@ exports.update=(req,res)=>
                     {
                         message:`Nu se pote updata meciul cu id-ul: ${id}`
                     }
-                )
+                );
             }
-        }).catch(err=>res.status(500).send({
-            message:`Eroare la updatate-ul meciului cu id-ul: ${id} `
-        }));
-}
+        }).catch(err=>
+            res.status(500).send({
+            message:`Eroare la updatate-ul meciului ` +id
+        }))
+};
 
 exports.delete=(req,res)=>
 {
     const id=req.params.id;
-    console.log("Acesta este id-ul meciului: "+id);
-    Meci.destroy({
+    Meci_viitor.destroy({
         where:{id:id}
     }).then(num=>
         {

@@ -44,12 +44,12 @@ exports.update=(req,res)=>
                     }
                 )
             }
-        }).catch(res.status(500).send({
+        }).catch(err=>res.status(500).send({
             message:`Eroare la updatate-ul istoriei cu id-ul: ${id} `
         }));
 }
 
-exports.delete=(res,req)=>
+exports.delete=(req,res)=>
 {
     const id=req.params.id;
     Istorie.destroy({

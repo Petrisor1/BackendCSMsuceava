@@ -5,7 +5,7 @@ module.exports=app=>
 
     router.get("/",media.findAll);
     router.post("/",media.create);
-    router.delete("/",media.delete);
+    router.delete("/:id",media.delete);
     router.put("/:id",media.update);
 
     app.use("/media",router);

@@ -26,4 +26,5 @@ db.media=require('./media.model.js')(sequelize,Sequelize);
 db.sponsors=require('./sponsor.model.js')(sequelize,Sequelize);
 db.stiri=require('./stire.model.js')(sequelize,Sequelize);
 db.mecis=require('./meci.model.js')(sequelize,Sequelize);
+db.meciuri_viitors=require('./meci_viitor.model.js')(sequelize,Sequelize);
 module.exports =db;

@@ -7,7 +7,7 @@ module.exports = app=>
 
     router.post("/",sponsors.create);
 
-    router.delete("/",sponsors.delete);
+    router.delete("/:id",sponsors.delete);
 
     router.put("/:id",sponsors.update);
 

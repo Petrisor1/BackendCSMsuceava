@@ -8,7 +8,7 @@ module.exports =app =>
     router.post("/",jucatori.create);
 
     //Stergerea unui clasament
-    router.delete("/",jucatori.delete);
+    router.delete("/:id",jucatori.delete);
 
     //Update-ul unui clasament in functie de id
     router.put("/:id",jucatori.update);
