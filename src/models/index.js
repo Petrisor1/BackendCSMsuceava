@@ -19,7 +19,7 @@ db.Sequelize=Sequelize;
 db.sequelize=sequelize;
 
 db.clasaments = require('./clasament.model.js')(sequelize,Sequelize);
-db.aministrators=require('./administrator.model.js')(sequelize,Sequelize);
+db.administrators=require('./administrator.model.js')(sequelize,Sequelize);
 db.istorie = require('./istorie.model.js')(sequelize,Sequelize);
 db.jucators=require('./jucator.model.js')(sequelize,Sequelize);
 db.media=require('./media.model.js')(sequelize,Sequelize);

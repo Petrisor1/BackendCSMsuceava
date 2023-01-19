@@ -1,4 +1,5 @@
 const db= require("../models");
+const bcrypt =require("bcryptjs");
 const Administrator=db.administrators;
 const Op=db.Sequelize.Op;
 
@@ -12,6 +13,9 @@ exports.create=(req,res)=>
     const administrator=
     {
         nume:req.body.nume,
+        prenume:req.body.prenume,
+        email:req.body.email,
+        parola:req.body.parola
     }
     Administrator.create(administrator).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea noului administrator"}))
 }

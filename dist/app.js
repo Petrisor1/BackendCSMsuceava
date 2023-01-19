@@ -29,6 +29,7 @@ require("./src/routes/stire.routes")(app);
 require("./src/routes/jucator.routes")(app);
 require("./src/routes/meci.routes")(app);
 require("./src/routes/meci_viitor.routes")(app);
+require("./src/routes/auth.routes")(app);
 // router.use((err,req,res,next)=>
 // {
 //     if(err)
