@@ -6,6 +6,7 @@ const Op = db.Sequelize.Op;
 
 var jwt = require("jsonwebtoken");
 var bcrypt=require("bcryptjs");
+const { match } = require("minimatch");
 
 
 exports.signin = (req, res) => {
@@ -15,36 +16,31 @@ exports.signin = (req, res) => {
       }
     })
       .then(admin => {
-        if (!admin) {
-          return res.status(404).send({ message: "Email Not found." });
-        }
-  
-            var passwordIsValid ;
-          
-          if(req.body.parola===admin.parola)  
-          {
-            passwordIsValid=true;
+          if (!admin) {
+            return res.status(404).send({ message: "Email Not found." });
           }
     
-        console.log("Acesta este rezultatul compararii parolelor"+passwordIsValid
-        +"\n body: "+req.body.parola+
-        "\n Administrator: "+admin.parola);
-        if (!passwordIsValid) {
-          return res.status(401).send({
-            accessToken: null,
-            message: "Parola nevalida!"
-          });
-        }
-  
-        var token = jwt.sign({ id: admin.id }, config.secret, {
-          expiresIn: 5 // 24 hours
-        });
-  
-          res.status(200).send({
-            id: admin.id,
-            email: admin.email,
-            accessToken: token
-          });
+     const  passwordIsValid= bcrypt.compareSync(req.body.parola,admin.parola)
+          
+            if (!passwordIsValid) {
+              return res.status(401).send({
+                accessToken: null,
+                message: "Parola nevalida!"
+              });
+            }
+            
+            var token = jwt.sign({ id: admin.id,email:admin.email }, config.secret, {
+             expiresIn: 1000 // 24 hours
+             });
+        
+                res.status(200).send({
+                  // id: admin.id,
+                  // email: admin.email,
+                  // accessToken: token
+                  token
+                });
+            
+                
       })
       .catch(err => {
         res.status(500).send({ message: err.message });

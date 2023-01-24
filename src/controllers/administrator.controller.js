@@ -10,14 +10,23 @@ exports.create=(req,res)=>
         res.status(400).send({message:"Continutul trimis este gol"});
     }
 
-    const administrator=
+    // const administrator=
+    // {
+    //     nume:req.body.nume,
+    //     prenume:req.body.prenume,
+    //     email:req.body.email,
+    //     parola:req.body.parola
+    // }
+    bcrypt.hash(req.body.parola,10).then((hash)=>
     {
-        nume:req.body.nume,
-        prenume:req.body.prenume,
-        email:req.body.email,
-        parola:req.body.parola
-    }
-    Administrator.create(administrator).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea noului administrator"}))
+        Administrator.create({
+            nume:req.body.nume,
+            prenume:req.body.prenume,
+            email:req.body.email,
+            parola:hash
+        }).then(data=>{res.send(data)}).catch(err=>res.status(500).send({message:"Eroare la crearea noului administrator"}))
+    })
+    
 }
 
 exports.findAll=(req,res)=>
